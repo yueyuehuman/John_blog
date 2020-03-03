@@ -71,6 +71,53 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Algorithmic-bias" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/John_blog/2020/02/26/Algorithmic-bias/" class="article-date">
+  <time datetime="2020-02-26T12:22:40.000Z" itemprop="datePublished">2020-02-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/John_blog/2020/02/26/Algorithmic-bias/">算法偏见</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="什么是算法偏见"><a href="#什么是算法偏见" class="headerlink" title="什么是算法偏见"></a>什么是算法偏见</h1><p>基于大数据的算法和决策已经渗透到我们日常生活的方方面面，成为个人理财、医疗、招聘、住房、教育和政策的重要工具。因此，询问这些算法是否可以基于性别、种族或健康状况等理由而具有歧视性是具有社会和伦理重要性的。事实证明，答案是肯定的:例如，最近针对在线广告的研究表明，高收入职位的广告呈现给男性的频率远高于呈现给女性的频率</p>
+<p>即使在算法开发者没有歧视意图的情况下，这种算法偏见仍然存在。有时可能是内在使用的数据源(软件做出的决定是建立在数据可以反映,甚至放大的结果历史歧视),但即使敏感属性压制从输入,一个训练有素的机器学习算法可能仍然歧视的基础上如此敏感的属性,因为数据中存在的相关性。这些考虑要求开发具有区分意识的数据挖掘系统。对于数据挖掘社区来说，这是一个新颖且具有挑战性的研究领域。本教程的目的是调查算法偏差，介绍其最常见的变体，并重点介绍为获得有效解决方案而开发的算法技术和关键思想。本教程涵盖了两种主要的补充方法:歧视发现算法和公平感知数据挖掘的歧视预防算法。最后，我们总结了未来研究的前景</p>
+<p>报告得出的结论是，大数据技术造成的社会危害远远超过对隐私的损害。它特别表示关切的是，即使在没有歧视意图的情况下，大数据所通知的决定也可能产生歧视性影响，进一步对已经处于不利地位的群体施加不那么有利的待遇。在数据挖掘社区,努力设计discrimination-conscious方法开发了两组解决方案:(1)歧视发现从数据库技术[13]和(2)歧视预防通过fairness-aware数据挖掘、开发数据挖掘系统是discrimination-conscious设计[8]。数据库中的歧视发现包括对大量历史决策记录中隐藏的歧视情况和实践的实际发现。数据挖掘中的歧视预防包括确保从数据集自动提取的数据挖掘模型不会导致歧视性决策，即使数据集本身对受保护的组有偏见。不同的歧视预防方法提出了考虑不同的数据挖掘算法,如naıve贝叶斯模型、逻辑回归、决策树、铰链损失,支持向量机,适应性增强,分类,和规则和模式挖掘。可以设想有三种防止歧视的方法:通过转换源数据进行预处理;将反歧视约束集成到算法设计中进行处理;通过修改数据挖掘模型的结果进行后处理。</p>
+<h2 id="算法偏见的产生"><a href="#算法偏见的产生" class="headerlink" title="算法偏见的产生"></a>算法偏见的产生</h2><h4 id="1-训练数据偏见Training-Data-Bias"><a href="#1-训练数据偏见Training-Data-Bias" class="headerlink" title="1.训练数据偏见Training Data Bias"></a>1.训练数据偏见Training Data Bias</h4><p>算法偏见的第一种可能性是用于算法训练或输入数据的偏差，因为开发人员通常不会公开用于训练自治系统的精确数据。如果我们只看到最终的学习模型或它的行为，那么我们甚至可能没有意识到，在使用算法达到预期目的时，使用了有偏差的数据。</p>
+<h4 id="2-算法偏重偏差-Algorithmic-Focus-Bias"><a href="#2-算法偏重偏差-Algorithmic-Focus-Bias" class="headerlink" title="2.算法偏重偏差 Algorithmic Focus Bias"></a>2.算法偏重偏差 Algorithmic Focus Bias</h4><p>故意不使用某些信息</p>
+<p>一个更中立的例子是，在某些决策类型中使用受法律保护的信息时，算法的关注可能会导致偏见。如果提供的输入变量在法律上不允许用于某些类型的预测或判断，那么在其他方面中立的学习算法可能会由于关注点有偏差而表现出算法偏差(相对于法律标准)。即使该算法在统计上是无偏的(假设训练数据无偏)，它也会偏离法律标准。也就是说，我们可以在两种类型的算法偏差之间进行强制选择:一种是通过使用违反法律标准的信息而与法律标准相关，另一种是通过忽略输入数据中的统计相关信息而与统计标准相关。</p>
+<h4 id="3-算法处理偏差-Algorithmic-Processing-Bias"><a href="#3-算法处理偏差-Algorithmic-Processing-Bias" class="headerlink" title="3.算法处理偏差 Algorithmic Processing Bias"></a>3.算法处理偏差 Algorithmic Processing Bias</h4><p>当算法本身以各种方式产生偏差时，就会产生第三种算法偏差。算法处理偏差最明显的例子是在算法中使用统计偏差估计量。</p>
+<h4 id="4-背景转移偏差-Transfer-Context-Bias"><a href="#4-背景转移偏差-Transfer-Context-Bias" class="headerlink" title="4.背景转移偏差 Transfer Context Bias"></a>4.背景转移偏差 Transfer Context Bias</h4><p>转移背景偏差，算法和自主系统的不恰当使用或部署</p>
+<h4 id="5-理解性偏差-Interpreter-Bias"><a href="#5-理解性偏差-Interpreter-Bias" class="headerlink" title="5.理解性偏差 Interpreter Bias"></a>5.理解性偏差 Interpreter Bias</h4><p>算法偏差的最后一个来源是用户对算法输出或功能的误解，或者是算法所在的更广泛的自治系统的误解。虽然这种偏差可以简单地描述为用户错误，但情况往往比这更复杂。特别是，解释偏差表示，即使在预期的操作范围内，算法产生的信息之间也不匹配;以及(ii)使用该输出的用户或系统的信息需求。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://yueyuehuman.github.io/John_blog/2020/02/26/Algorithmic-bias/" data-id="ck7blwdrb0000dshm390g93j8" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/John_blog/tags/algorithmic-bias/" rel="tag">algorithmic bias</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Poc-of-CVE-2020-1938" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/John_blog/2020/02/26/Poc-of-CVE-2020-1938/" class="article-date">
@@ -516,7 +563,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/John_blog/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/John_blog/tags/vps-shadowsocks/" rel="tag">vps shadowsocks</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/John_blog/tags/algorithmic-bias/" rel="tag">algorithmic bias</a></li><li class="tag-list-item"><a class="tag-list-link" href="/John_blog/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/John_blog/tags/vps-shadowsocks/" rel="tag">vps shadowsocks</a></li></ul>
     </div>
   </div>
 
@@ -526,7 +573,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/John_blog/tags/blog/" style="font-size: 20px;">blog</a> <a href="/John_blog/tags/vps-shadowsocks/" style="font-size: 10px;">vps shadowsocks</a>
+      <a href="/John_blog/tags/algorithmic-bias/" style="font-size: 10px;">algorithmic bias</a> <a href="/John_blog/tags/blog/" style="font-size: 20px;">blog</a> <a href="/John_blog/tags/vps-shadowsocks/" style="font-size: 10px;">vps shadowsocks</a>
     </div>
   </div>
 
@@ -548,6 +595,10 @@
       <ul>
         
           <li>
+            <a href="/John_blog/2020/02/26/Algorithmic-bias/">算法偏见</a>
+          </li>
+        
+          <li>
             <a href="/John_blog/2020/02/26/Poc-of-CVE-2020-1938/">CVE-2020-1938</a>
           </li>
         
@@ -561,10 +612,6 @@
         
           <li>
             <a href="/John_blog/2020/02/14/Github-pages-hexo-to-start-up-your-blog/">利用Github_Pages和Hexo创建你的博客</a>
-          </li>
-        
-          <li>
-            <a href="/John_blog/2020/02/12/vultr-ss/">从零开始搭建梯子</a>
           </li>
         
       </ul>
